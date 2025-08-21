@@ -19,4 +19,18 @@ export class ProjectService {
     {this.projects = x}
     )
    }
+
+   create(project: Project): void {
+    this.http.post(this.apiBaseUrl + "Project", project).subscribe({
+      next: (response) => {
+        console.log("::SUCCESS::")
+        console.log("Create request result:", response)
+        this.projects.push(project)
+      },
+      error: (error) => {
+        console.log("::ERROR::")
+        console.log("Create request result:", error);
+      }
+    })
+   }
 }

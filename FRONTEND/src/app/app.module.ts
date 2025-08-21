@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { ListComponent } from './list/list.component';
 import { IssueListComponent } from './issue-list/issue-list.component';
 import { StatsComponent } from './stats/stats.component';
+import { CreateProjectComponent } from './create-project/create-project.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { StatsComponent } from './stats/stats.component';
     NavComponent,
     ListComponent,
     IssueListComponent,
-    StatsComponent
+    StatsComponent,
+    CreateProjectComponent
   ],
   imports: [
     BrowserModule,

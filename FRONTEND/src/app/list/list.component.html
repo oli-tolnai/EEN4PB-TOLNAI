@@ -1,6 +1,8 @@
 <h2>Projects</h2>
 
-<table class="table table-sm table-striped table-hover">
+<app-create-project></app-create-project>
+
+<table class="table table-sm table-striped table-hover" *ngIf="projectService.projects.length; else noProjects">
     <thead>
         <tr>
             <th>Name</th>
@@ -13,8 +15,21 @@
         <tr *ngFor="let project of projectService.projects" class="align-middle" >
             <td>{{project.name}}</td>
             <td>{{project.description}}</td>
-            <td class="activeIssueCenter">{{project.activeIssues}}</td>
-            <td>Edit/View</td>
+            <td class="activeIssueCenter">{{project.activeIssues}} pcs</td>
+            <td>
+                <button class="btn btn-sm btn-warning me-1">
+                    <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-sm btn-success me-1">
+                    <i class="bi bi-search"></i>
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<ng-template #noProjects>
+    <div class="alert alert-warning text-center" role="alert">
+        <i class="bi bi-info-circle"></i> No projects available.
+    </div>
+</ng-template>
