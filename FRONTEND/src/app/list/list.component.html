@@ -1,1 +1,20 @@
-<p>list works!</p>
+<h2>Projects</h2>
+
+<table class="table table-sm table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th class="activeIssueCenter">Active Issues</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let project of projectService.projects" class="align-middle" >
+            <td>{{project.name}}</td>
+            <td>{{project.description}}</td>
+            <td class="activeIssueCenter">{{project.activeIssues}}</td>
+            <td>Edit/View</td>
+        </tr>
+    </tbody>
+</table>
