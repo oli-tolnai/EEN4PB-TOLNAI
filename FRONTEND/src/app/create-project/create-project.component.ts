@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { Project } from '../project';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-project',
@@ -12,12 +13,19 @@ export class CreateProjectComponent {
   project: Project = new Project()
   
 
-  constructor(private projService: ProjectService) {
+  constructor(private projService: ProjectService, private router: Router) {
 
   }
 
   create(): void {
-    this.projService.create(this.project)
+    // const newProject = { ...this.project}
+    if (this.project.name === "" && this.project.description === "") {
+      alert("Name and Description can't be empty!")
 
+    }else{
+      this.projService.create(this.project)
+      this.project = new Project()
+    }    
   }
+  
 }
