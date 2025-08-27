@@ -1,3 +1,5 @@
+import { Issue } from "./issue"
+
 export class Project {
     id: string = ""
     name: string = ""
