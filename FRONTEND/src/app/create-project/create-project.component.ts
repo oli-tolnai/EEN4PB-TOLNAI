@@ -25,6 +25,7 @@ export class CreateProjectComponent {
     }else{
       this.projService.create(this.project)
       this.project = new Project()
+      this.router.navigate(["list"])
     }    
   }
   
