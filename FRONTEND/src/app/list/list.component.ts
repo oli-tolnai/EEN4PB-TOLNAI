@@ -21,4 +21,8 @@ export class ListComponent {
     this.router.navigate(["/edit/" + project.id])
   }
 
+  get projects(): Project[]{
+    return this.projectService.projects
+  }
+
 }

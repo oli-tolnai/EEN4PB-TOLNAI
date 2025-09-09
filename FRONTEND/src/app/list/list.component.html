@@ -2,7 +2,7 @@
 
 <!-- <app-create-project></app-create-project> -->
 
-<table class="table table-sm table-striped table-hover" *ngIf="projectService.projects.length; else noProjects">
+<table class="table table-sm table-striped table-hover" *ngIf="projects.length; else noProjects">
     <thead>
         <tr>
             <th>Name</th>
@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let project of projectService.projects" class="align-middle" >
+        <tr *ngFor="let project of projects" class="align-middle" >
             <td>{{project.name}}</td>
             <td>{{project.description}}</td>
             <td class="activeIssueCenter">{{project.activeIssues}} pcs</td>

@@ -26,6 +26,7 @@ export class CreateProjectComponent {
       this.projService.create(this.project)
       this.project = new Project()
       this.router.navigate(["list"])
+      this.projService.loadApi()
     }    
   }
   
