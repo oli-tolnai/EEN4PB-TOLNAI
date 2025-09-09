@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { Project } from '../project';
+import { Project, ProjectDetails } from '../project';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectService } from '../project.service';
-import { ProjectDetails } from '../project-details';
 
 @Component({
   selector: 'app-view',
