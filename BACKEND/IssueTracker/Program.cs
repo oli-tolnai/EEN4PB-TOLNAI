@@ -32,16 +32,16 @@ namespace IssueTracker
             });
 
             // CORS AllowAll
-            //builder.Services.AddCors(options =>
-            //{
-            //    options.AddPolicy("AllowAll",
-            //        policy =>
-            //        {
-            //            policy.AllowAnyOrigin()
-            //                  .AllowAnyHeader()
-            //                  .AllowAnyMethod();
-            //        });
-            //});
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    policy =>
+                    {
+                        policy.AllowAnyOrigin()
+                              .AllowAnyHeader()
+                              .AllowAnyMethod();
+                    });
+            });
 
 
 
@@ -145,7 +145,7 @@ namespace IssueTracker
             app.UseHttpsRedirection();
 
             app.UseCors("AllowAngularDev");
-            //app.UseCors("AllowAll");
+            app.UseCors("AllowAll");
 
             app.UseAuthentication();
             app.UseAuthorization();

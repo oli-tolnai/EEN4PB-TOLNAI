@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { Project } from '../project';
 import { Router } from '@angular/router';
@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
   templateUrl: './list.component.html',
   styleUrl: './list.component.sass'
 })
-export class ListComponent {
+export class ListComponent implements OnInit{
   
   projects: Project[] = [];
-  loading = false;
+  loading: boolean = false;
   
   constructor(private router: Router, public projectService: ProjectService) {}
 
