@@ -23,10 +23,10 @@ export class CreateProjectComponent {
       alert("Name and Description can't be empty!")
 
     }else{
-      this.projService.create(this.project)
+      // this.projService.create(this.project)
       this.project = new Project()
       this.router.navigate(["list"])
-      this.projService.loadApi()
+      // this.projService.loadApi()
     }    
   }
   
