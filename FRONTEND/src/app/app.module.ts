@@ -10,6 +10,9 @@ import { ListComponent } from './list/list.component';
 import { StatsComponent } from './stats/stats.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ViewComponent } from './view/view.component';
+import { AddIssueComponent } from './add-issue/add-issue.component';
+import { EditIssueComponent } from './edit-issue/edit-issue.component';
+import { EditprojComponent } from './editproj/editproj.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ViewComponent } from './view/view.component';
     ListComponent,
     StatsComponent,
     CreateProjectComponent,
-    ViewComponent
+    ViewComponent,
+    AddIssueComponent,
+    EditIssueComponent,
+    EditprojComponent
   ],
   imports: [
     BrowserModule,
