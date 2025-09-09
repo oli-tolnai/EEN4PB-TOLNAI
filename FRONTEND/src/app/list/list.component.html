@@ -1,4 +1,77 @@
-<h2>Projects</h2>
+<div class="container mt-4">
+  <h2 class="mb-4 title">Projects</h2>
+  
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && projects.length === 0" class="alert alert-info">
+    No projects found. <a routerLink="/create">Create your first project</a>.
+  </div>
+
+  <div *ngIf="!loading && projects.length > 0" class="table-responsive bdr">
+    <table class="table table-sm table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th class="center">Active Issues</th>
+          <th class="center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects" class="align-middle">
+          <td>{{ project.name }}</td>
+          <td>{{ project.description }}</td>
+          <td class="center">
+            <span class="badge bg-info">{{ project.activeIssues }} pcs</span>
+          </td>
+          <td class="center">
+            <div class="btn-group" role="group">
+              <button 
+                type="button" 
+                class="btn btn-sm btn-outline-primary" 
+                (click)="viewProject(project.id)"
+                title="View Project">
+                <i class="bi bi-eye"></i>
+              </button>
+              <button 
+                type="button" 
+                class="btn btn-sm btn-outline-warning" 
+                (click)="editProject(project.id)"
+                title="Edit Project">
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button 
+                type="button" 
+                class="btn btn-sm btn-outline-success" 
+                (click)="addIssue(project.id)"
+                title="Add Issue">
+                <i class="bi bi-plus-circle"></i>
+              </button>
+              <button 
+                type="button" 
+                class="btn btn-sm btn-outline-danger" 
+                (click)="deleteProject(project.id)"
+                title="Delete Project">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <h2>Projects</h2> -->
 
 <!-- <app-create-project></app-create-project> -->
 
@@ -26,10 +99,10 @@
             </td>
         </tr>
     </tbody>
-</table> -->
+</table>
 
 <ng-template #noProjects>
     <div class="alert alert-warning text-center" role="alert">
         <i class="bi bi-info-circle"></i> No projects available.
     </div>
-</ng-template>
+</ng-template> -->

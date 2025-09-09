@@ -14,26 +14,26 @@ export class ViewComponent {
   projectDeatils: ProjectDetails = new ProjectDetails()
 
   constructor(private route: ActivatedRoute, private router: Router, public projectService: ProjectService){
-    route.params.subscribe(param => {
-      this.project = projectService.projects.filter(x => x.id == param["id"])[0]
+    // route.params.subscribe(param => {
+    //   this.project = projectService.projects.filter(x => x.id == param["id"])[0]
       
-    })
-    this.loadDetails()
+    // })
+    // this.loadDetails()
   }
 
-  loadDetails(): void{
-    this.projectDeatils = this.projectService.getProject(this.project)
-    // console.log(this.detailedProject.activeIssues);
-    // console.log(this.detailedProject.closedIssueCount);
-    // console.log(this.detailedProject.description);
-    // console.log(this.detailedProject.id);
-    // console.log(this.detailedProject.inProgressIssueCount);
-    // console.log(this.detailedProject.issues);
-    // console.log(this.detailedProject.name);
-    // console.log(this.detailedProject.newIssueCount);
-    // console.log(this.detailedProject.numberofIssues);
+  // loadDetails(): void{
+  //   this.projectDeatils = this.projectService.getProject(this.project)
+  //   // console.log(this.detailedProject.activeIssues);
+  //   // console.log(this.detailedProject.closedIssueCount);
+  //   // console.log(this.detailedProject.description);
+  //   // console.log(this.detailedProject.id);
+  //   // console.log(this.detailedProject.inProgressIssueCount);
+  //   // console.log(this.detailedProject.issues);
+  //   // console.log(this.detailedProject.name);
+  //   // console.log(this.detailedProject.newIssueCount);
+  //   // console.log(this.detailedProject.numberofIssues);
     
-  }
+  // }
 
 
 
