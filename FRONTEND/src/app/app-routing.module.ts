@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "list", component: ListComponent},
   { path: "create", component: CreateProjectComponent},
   { path: "view/:id", component: ViewComponent},
-  { path: "editproj/:id", component: EditprojComponent}
+  { path: "editproj/:id", component: EditprojComponent},
   { path: "stats", component: StatsComponent},
   { path: "**", redirectTo: "list", pathMatch: "full"}
   
